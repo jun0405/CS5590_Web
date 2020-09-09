@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <title>ICP 3: Rock-Paper-Scissors</title>
+        <script>
+            var user_score = 0;
+            var computer_score = 0;
+
+            // Get choice from computer
+            function getcomputer_choice() {
+                var choice = Math.floor(Math.random() * 3);
+                if (choice === 0) {
+                    return "rock";
+                } else if (choice === 1) {
+                    return "paper";
+                } else if (choice === 2) {
+                    return "scissors";
+                }
+            }
+
+            // Check who is the winner
+            function determineWinner(user_choice,computer_choice) {
+                if (user_choice === computer_choice) {
+                    return "No Winner. It's a tie.";
+                } else if (user_choice === "rock") {
+                    if (computer_choice === "paper") {
+                        computer_score++;
+                        return "Computer won.";
+                    } else {
+                        user_score++;
+                        return "You won.";
+                    }
+                } else if (user_choice === "paper") {
+                    if (computer_choice === "scissors") {
+                        computer_score++;
+                        return "Computer won.";
+                    }else {
+                        user_score++;
+                        return "You won";
+                    }
+                } else if (user_choice === "scissors") {
+                    if (computer_choice === "rock") {
+                        computer_score++;
+                        return "Computer won.";
+                    } else {
+                        user_score++;
+                        return "You won.";
+                    }
+                }
+            }
+
+            // Play the game and keep track the stats
+            function playGame(user_choice) {
+                var computer_choice = getcomputer_choice();
+                window.alert("Computer picked " + computer_choice);
+                window.alert(determineWinner(user_choice, computer_choice));
+                document.getElementById("score").innerHTML = "You (" + user_score + ") - Computer (" + computer_score + ")";
+            };
+        </script>
+    </head>
+    <style>
+        div {
+            text-align: center;
+        }
+    </style>
+    <body>
+        <div >
+            <h3 id = "score">You (0) - Computer (0)</h3>
+        </div>
+        <center>
+            <button type="button" onclick="playGame('rock')">rock</button>
+            <button type="button" onclick="playGame('paper')">paper</button>
+            <button type="button" onclick="playGame('scissors')">scissors</button>
+        </center>
+    </body>
+</html>
