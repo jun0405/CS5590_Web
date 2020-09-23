@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <meta charset="UTF-8">
+        <title>To Do List</title>
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>TODO LIST</h1>
+            </div>
+        </div>
+        <div class="container">
+            <form #add_item="ngForm" (ngSubmit)="submitNewItem(add_item.value)">
+                <div class="row">
+                    <div class="col-10">
+                        <input type="text" class="form-control" name="taskName" ngModel/>
+                    </div>
+                    <div class="col-2">
+                        <button type="submit" class="btn btn-info">Add Task</button>
+                    </div>
+                </div>
+            </form>
+            <div class="col-12">
+                <h2>Pending todo tasks</h2>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div *ngIf="items.length > 0">
+                        <div *ngFor="let item of items; let id = index">
+                          <div class="ml-1 mr-1 row itemList border border-secondary" style="height: 30px">
+                            <div class="col-10" style="padding: 5px" >
+                              <div class="text-left" (click)="completeItem(item)">{{item}}</div>
+                            </div>
+                            <div class="col-2 text-right" style="padding: 5px">
+                              <button (click)="deleteItem(item)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="itemList" *ngIf="items.length == 0">
+                        <h4 style="color:green">No more todo task.</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <button class="btn btn-info" (click)="showTimer()">Countdown</button>
+        </div>
+        <p class="timer text-center" *ngIf="timer_msg">
+            {{timer_msg.days}} 
+            <span class="text">days</span>
+            {{timer_msg.hours}} <span class="text">hours</span> 
+            {{timer_msg.minutes}} 
+            <span class="text">minutes</span>
+            {{timer_msg.seconds}} <span class="text">seconds</span>
+        </p>
+    </body>
+</html>
