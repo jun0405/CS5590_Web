@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "419613204511",
+    "firebase_url": "https://umkcicp12.firebaseio.com",
+    "project_id": "umkcicp12",
+    "storage_bucket": "umkcicp12.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419613204511:android:58fdc2bb06083c452cb52a",
+        "android_client_info": {
+          "package_name": "com.vijaya.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "419613204511-cs5dt5h2t5tmmob7f3fsotbdjsqrqe1c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClyXYx8HX-e7-K6uvm03XCGnUqd3tYbLQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "419613204511-cs5dt5h2t5tmmob7f3fsotbdjsqrqe1c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
